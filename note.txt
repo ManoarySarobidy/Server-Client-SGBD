@@ -1,0 +1,27 @@
+- Ahoana no atao raha avy any anaty fichier aloha ilay izy?
+
+- Conservena anaty fichier ilay objet rehetra raha relations ilay izy
+
+- Izany hoe izay relations de conservena any anaty fichiers iray
+
+- Conservena anaty fichier tsirairay ny data anle objet :
+
+	-- Ohatra raha manana relation za hoe animal
+
+		-- De alefako any anaty fichier animal.col ny colones rehetra
+
+		-- Alefako any anaty fichier animal.dat ny lignes rehetra
+
+		-- Izay angamba no mety
+
+- Donc :
+	~ .col ny metadata anle colone
+	~ .dat ny vecteur lignes rehetra
+
+- Izany hoe :
+	- ameko anazy any fotsiny ny relations tsisy data fa ny nom de relations ihany 
+	- azony iny de izy no manisy ny data ilainy ao anatin' ilay relations avy amin'ny famakiana fichier iray hafa mitondra an'iny relations iny  
+
+- Ndao ary andramana anaty projet vaovao tsara be
+- De rehefa te anova na te anampy colones de averina fafana ny any anaty file de ampidirina ecrire ndray
+- Ohatran'izay ihany koa ny lignes de fafana foana rehefa vita ny ilana azy

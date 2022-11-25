@@ -1,0 +1,268 @@
+/**
+     *  - FROM
+     *  - JOIN ... ON
+     *  - WHERE
+     *  - SELECT
+     * 
+     *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     *  *   Ireto ary ny dingana arahina ahazoana ny valiny ilaina :                                                                                        *
+     *  *        Relations cR = null;                                                                                                                       *
+     *  *          (fait) - Alaina ny " From " aloha dia executena ny requete izay ahazoana ny rehetra ao anatiny                                                 *
+     *  *          (fait)    -- cR = cR.projection( " * " , relations );                                                                                         *
+     *  *          (fait) - Azo ny relations azo avy amin'ny " From " de tediavina indray ny "JOIN" sy "ON" dia executena indray ny requete mifanaraka aminy      *
+     *  *          (fait)     -- cR = cR.join( tableJoin , columnJoin );                                                                                          *
+     *  *           - Azo ny relations avy amin'ny "JOIN sy ON" dia alaintsika amin'izay ny "Where" dia executena ny requete                                *
+     *  *               -- cR = cR.select( " * " , this.getCondition() );                                                                                   *
+     *  *           - Azo ny where izay vao atao ny projection anreo colone ilaina                                                                          *
+     *  *               -- cR = cR.projection( colones , cR );                                                                                              *
+     *  *                                                                                                                                                   *
+     *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+     * 
+     * -- Let's compute friendssssssss ------
+     * 
+     * */
+    public static Relations rela(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add("A");
+        cols.add("B");
+        // cols.add("A3");
+        // cols.add("A4");
+
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("a1");
+        data.addData("x1");
+        // data.addData("a3");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("a2");
+        data.addData("x2");
+        // data.addData("b3");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("a3");
+        data.addData("x1");
+        // data.addData("c3");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("a1");
+        data.addData("x2");
+        // data.addData("d3");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("a2");
+        data.addData("x1");
+        // data.addData("d3");
+        datas.add(data);
+
+        Relations rel = new Relations( "R1" , cols , datas );
+        return rel;
+    }
+
+    public static Relations relb(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add("B");
+        
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("x1");
+        // data.addData("a3");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("x2");
+        datas.add(data);
+        
+        Relations rel = new Relations( "R2" , cols , datas );
+        return rel;
+    }
+
+    public static Relations student(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add("Name");
+        cols.add("Course");
+
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("System");
+        data.addData("Btech");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Database");
+        data.addData("Mtech");
+        datas.add(data);
+        
+        data = new Row();
+        data.addData("Database");
+        data.addData("Btech");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Algebra");
+        data.addData("Btech");
+        datas.add(data);
+
+        Relations rel = new Relations( "Class" , cols , datas );
+        return rel;
+    }
+
+    public static Relations course(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add("Course");
+       
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("Btech");
+        datas.add(data);
+        data = new Row();
+        data.addData("Mtech");
+        datas.add(data);
+
+        Relations rel = new Relations( "Subject" , cols , datas );
+        return rel;
+    }
+    public static Relations CEN(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add( "IdCours" );
+        cols.add( "IdEtudiant" );
+        cols.add( "Note" );
+        
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("Archi");
+        data.addData(100);
+        data.addData("A");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Archi");
+        data.addData(300);
+        data.addData("A");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Syst");
+        data.addData(100);
+        data.addData("B");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Syst");
+        data.addData(200);
+        data.addData("B");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Syst");
+        data.addData(300);
+        data.addData("C");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Algo");
+        data.addData(100);
+        data.addData("C");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Algo");
+        data.addData(200);
+        data.addData("A");
+        datas.add(data);
+
+
+        Relations relation = new Relations( "CEN" , cols , datas);
+        return relation;
+    }
+    public static Relations CJH(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add( "IdCours" );
+        cols.add( "Jour" );
+        cols.add( "Heure" );
+        
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("Archi");
+        data.addData("Lu");
+        data.addData("9h");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Algo");
+        data.addData("Ma");
+        data.addData("9h");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Algo");
+        data.addData("Ve");
+        data.addData("9h");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Syst");
+        data.addData("Ma");
+        data.addData("14h");
+        datas.add(data);
+
+        Relations relation = new Relations( "CJH" , cols , datas);
+        return relation;
+    }
+    public static Relations CS(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add( "IdCours" );
+        cols.add( "Salle" );
+        
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData("Archi");
+        data.addData("S1");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Algo");
+        data.addData("S2");
+        datas.add(data);
+
+        data = new Row();
+        data.addData("Syst");
+        data.addData("S1");
+        datas.add(data);
+
+        Relations relation = new Relations( "CS" , cols , datas);
+        return relation;
+    }
+    public static Relations ENA(){
+        Vector<Object> cols = new Vector<Object>();
+        cols.add( "IdEtudiant" );
+        cols.add( "Nom" );
+        cols.add( "Adresse" );
+        
+        Vector<Row> datas = new Vector<Row>();
+        Row data = new Row();
+        data.addData(100);
+        data.addData("Toto");
+        data.addData("Nice");
+        datas.add(data);
+
+        data = new Row();
+        data.addData(200);
+        data.addData("Tata");
+        data.addData("Paris");
+        datas.add(data);
+
+        data = new Row();
+        data.addData(300);
+        data.addData("Titi");
+        data.addData("Rome");
+        datas.add(data);
+
+        Relations relation = new Relations( "ENA" , cols , datas);
+        return relation;
+    }
+
